@@ -1,0 +1,16 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "serve site",
+      "type": "shell",
+      "command": "python3 -m http.server 8765 --bind 127.0.0.1",
+      "isBackground": true,
+      "problemMatcher": {
+        "owner": "custom",
+        "pattern": { "regexp": "^__never__$" },
+        "background": { "activesBegin": true, "beginsPattern": "Serving HTTP", "endsPattern": "Serving HTTP" }
+      }
+    }
+  ]
+}
