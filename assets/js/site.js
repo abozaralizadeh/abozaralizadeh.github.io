@@ -678,20 +678,19 @@
   })();
 
   /* ------------------------------------------------------------------
-     12c. Writing: the list pins while you scroll through it. Every article
-          gets the same stretch of scrolling (STEP px); the active one opens
-          with its cover and summary, and the list glides to keep it in the
-          middle. The stage has a fixed height, so nothing shifts the page.
+     12c. Writing. Desktop: the list pins while you scroll through it; every
+          article gets the same stretch of scrolling (STEP px) and the active
+          one opens with its cover and summary. Phones and touch screens: a
+          plain list with every cover and summary visible (momentum scrolling
+          and a pinned list don't mix). Reduced motion: the plain list too.
      ------------------------------------------------------------------ */
   (() => {
     const stage = $(".articles-stage");
     if (!stage) return;
     const box = $(".articles-sticky", stage), list = $(".articles", stage), items = $$("li", list);
     const N = items.length, STEP = 130, TOP_PAD = 72;
-    if (reduce) { stage.classList.add("is-static"); return; }
-    const size = () => { stage.style.height = `${N * STEP + innerHeight}px`; };
-    size();
-    let active = -1, y = null, raf = 0, running = false;
+    const plainMode = () => reduce || matchMedia("(max-width: 820px), (hover: none)").matches;
+    let active = -1, y = null, raf = 0, visible = false, plain = null;
     const setActive = (i) => {
       if (i === active) return;
       if (active >= 0) items[active].classList.remove("is-open");
@@ -699,6 +698,7 @@
       active = i;
     };
     function frame() {
+      if (plain) return;
       const r = stage.getBoundingClientRect();
       const p = clamp(-r.top / Math.max(1, r.height - innerHeight));
       setActive(Math.min(N - 1, Math.floor(p * N)));
@@ -709,14 +709,25 @@
       const target = Math.max(Math.min(lowest, TOP_PAD), Math.min(TOP_PAD, box.clientHeight * 0.53 - (li.offsetTop + li.offsetHeight / 2)));
       y = y === null ? target : y + (target - y) * 0.14;
       list.style.transform = `translate3d(0, ${y.toFixed(2)}px, 0)`;
-      if (running) raf = requestAnimationFrame(frame);
+      if (visible) raf = requestAnimationFrame(frame);
     }
-    new IntersectionObserver(([e]) => {
-      running = e.isIntersecting;
+    function applyMode() {
+      const want = plainMode();
+      if (want === plain) { if (!plain) stage.style.height = `${N * STEP + innerHeight}px`; return; }
+      plain = want;
+      stage.classList.toggle("is-static", plain);
+      stage.classList.toggle("all-open", plain);
       cancelAnimationFrame(raf);
-      if (running) raf = requestAnimationFrame(frame);
+      if (plain) { stage.style.height = ""; list.style.transform = ""; items.forEach((li) => li.classList.remove("is-open")); active = -1; y = null; }
+      else { stage.style.height = `${N * STEP + innerHeight}px`; if (visible) raf = requestAnimationFrame(frame); }
+    }
+    applyMode();
+    new IntersectionObserver(([e]) => {
+      visible = e.isIntersecting;
+      cancelAnimationFrame(raf);
+      if (visible && !plain) raf = requestAnimationFrame(frame);
     }).observe(stage);
-    addEventListener("resize", size);
+    addEventListener("resize", applyMode);
   })();
 
   /* ------------------------------------------------------------------
