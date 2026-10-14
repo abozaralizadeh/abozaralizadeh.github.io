@@ -1035,7 +1035,7 @@ a.xref:hover { color: var(--ink); background: none; text-decoration-color: rgba(
 /* 1. nothing may be wider than the screen (it let iOS zoom out) */
 html { overflow-x: clip; }
 .map { overflow: hidden; }
-.pgraph { overflow: clip; }
+.pgraph { overflow: visible; }  /* photos are kept inside by the layout; clipping cut them */
 .pnode:not(.is-center):not(:hover):not(:focus-visible) .pcap { display: none; }
 
 /* 2. video player: the close button sits above the video, clear of its controls */
@@ -1051,3 +1051,19 @@ html { overflow-x: clip; }
 .articles-stage.all-open .articles li .a-sum { max-height: none; margin-top: 6px; opacity: 1; }
 .articles-stage.all-open .articles li .a-title { color: var(--ink); }
 .articles-stage.all-open .articles li { background: none; }
+
+/* ---------- GraphQL on phones: a small two-line card under the center photo, not two big code panes ---------- */
+.gql-mini { display: none; }
+@media (max-width: 820px) {
+  .offline-stage .gql { display: none; }
+  .pnode.is-center .pcap { display: none; }
+  .gql-mini { display: flex; flex-direction: column; gap: 2px; position: absolute; left: 0; top: 0; z-index: 4; width: max-content; max-width: 94%;
+    padding: 7px 12px; background: rgba(5, 6, 8, 0.92); border: 1px solid var(--line-2); border-radius: 10px; pointer-events: none;
+    font: 11px/1.5 var(--mono); color: var(--ink-2); box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5); }
+  .gql-mini code { background: none; padding: 0; font: inherit; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; min-height: 1.5em; }
+  .gql-mini .gm-r { opacity: 0; transform: translateY(3px); transition: opacity 0.35s var(--ease), transform 0.35s var(--ease); }
+  .gql-mini.is-done .gm-r { opacity: 1; transform: none; }
+  .g-arrow { color: var(--signal); }
+  .gql-side { margin-top: 10px; }
+}
+@media (max-width: 820px) { .offline-stage .pgraph { height: 1100px; } }

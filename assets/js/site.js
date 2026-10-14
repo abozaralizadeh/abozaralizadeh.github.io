@@ -532,15 +532,16 @@
       { x: 50, y: 5, s: 58 }, { x: 36, y: 96, s: 60 }, { x: 64, y: 97, s: 58 }, { x: 23, y: 4, s: 56 }, { x: 77, y: 4, s: 58 },
       { x: 17, y: 40, s: 56 }, { x: 83, y: 40, s: 54 }, { x: 84, y: 80, s: 56 }, { x: 16, y: 80, s: 54 } ],
       dots: [] };
-    const PHONE = { w: 690, h: 1000, photos: [
-      { x: 50, y: 46, s: 470 },
-      { x: 20, y: 9, s: 210 }, { x: 80, y: 9, s: 180 }, { x: 12, y: 66, s: 170 },
-      { x: 86, y: 66, s: 230 }, { x: 28, y: 84, s: 150 }, { x: 72, y: 85, s: 160 },
-      { x: 50, y: 6, s: 110 }, { x: 50, y: 19, s: 90 }, { x: 50, y: 96, s: 100 },
-      { x: 7, y: 30, s: 92 }, { x: 93, y: 30, s: 88 }, { x: 8, y: 79, s: 90 }, { x: 92, y: 79, s: 88 },
-      { x: 16, y: 22, s: 70 }, { x: 84, y: 22, s: 70 }, { x: 8, y: 50, s: 64 }, { x: 92, y: 50, s: 64 },
-      { x: 30, y: 30, s: 66 }, { x: 70, y: 30, s: 66 }, { x: 30, y: 72, s: 66 }, { x: 70, y: 72, s: 66 }, { x: 50, y: 82, s: 64 },
-      { x: 8, y: 40, s: 60 }, { x: 92, y: 40, s: 60 }, { x: 36, y: 62, s: 58 }, { x: 64, y: 62, s: 58 } ],
+    // phones: a clear band under the center photo holds the mini query card
+    const PHONE = { w: 690, h: 1100, photos: [
+      { x: 50, y: 44, s: 470 },
+      { x: 20, y: 10, s: 210 }, { x: 80, y: 10, s: 180 }, { x: 12, y: 69, s: 170 },
+      { x: 86, y: 69, s: 230 }, { x: 25, y: 90, s: 150 }, { x: 75, y: 90.5, s: 160 },
+      { x: 50, y: 5, s: 110 }, { x: 50, y: 18.6, s: 90 }, { x: 50, y: 96.5, s: 100 },
+      { x: 7, y: 30, s: 92 }, { x: 93, y: 30, s: 88 }, { x: 8, y: 82, s: 90 }, { x: 92, y: 82, s: 88 },
+      { x: 16, y: 21, s: 70 }, { x: 84, y: 21, s: 70 }, { x: 8, y: 51, s: 64 }, { x: 92, y: 51, s: 64 },
+      { x: 30, y: 26, s: 66 }, { x: 70, y: 26, s: 66 }, { x: 30, y: 79, s: 66 }, { x: 70, y: 79, s: 66 }, { x: 50, y: 82, s: 64 },
+      { x: 8, y: 40, s: 60 }, { x: 92, y: 40, s: 60 }, { x: 38, y: 66, s: 58 }, { x: 60, y: 66, s: 58 } ],
       dots: [] };
     // edges between rest spots ("p" = photo slot, "d" = dot)
     const EDGES = [["p0", "p1"], ["p0", "p2"], ["p0", "p3"], ["p0", "p4"], ["p0", "p5"], ["p0", "p6"],
@@ -570,8 +571,11 @@
       const W = g.clientWidth - 2 * pad, H = g.clientHeight, k = Math.min(1, W / L.w, H / L.h);
       for (const n of nodes) {
         const s = n.kind === "p" ? L.photos[n.slot] : L.dots[n.slot];
-        n.rx = pad + (s.x / 100) * W; n.ry = (s.y / 100) * H;
         if (n.kind === "p") { n.size = Math.round(s.s * k); n.el.style.width = `${n.size}px`; }
+        // keep every photo fully inside the graph: never past an edge
+        const half = (n.kind === "p" ? n.size / 2 : 6) + 3;
+        n.rx = Math.min(Math.max(pad + (s.x / 100) * W, pad + half), pad + W - half);
+        n.ry = Math.min(Math.max((s.y / 100) * H, half), H - half);
         if (!placed) { n.x = n.rx; n.y = n.ry; }
         const center = n.kind === "p" && n.slot === 0;
         n.el.classList.toggle("is-center", center);
@@ -582,8 +586,10 @@
       placed = true;
     }
 
+    const mini = $(".gql-mini", g), miniQ = mini && $(".gm-q", mini), miniR = mini && $(".gm-r", mini);
     function render() {
       for (const n of nodes) n.el.style.transform = `translate3d(${n.x.toFixed(1)}px, ${n.y.toFixed(1)}px, 0) translate(-50%, -50%)`;
+      if (mini) { const c = nodes.find((m) => m.kind === "p" && m.slot === 0); mini.style.transform = `translate3d(${c.x.toFixed(1)}px, ${(c.y + c.size / 2 + 12).toFixed(1)}px, 0) translateX(-50%)`; }
       for (const e of lines) {
         const A = map[e.a], B = map[e.b];
         e.l.setAttribute("x1", A.x.toFixed(1)); e.l.setAttribute("y1", A.y.toFixed(1));
@@ -625,6 +631,20 @@
         tags: "[" + d.tags.split(",").map((t) => `<span class="g-str">"${t}"</span>`).join(", ") + "]" };
       const r = ["{", `  <span class="g-field">"data"</span>: {`, `    <span class="g-field">"photo"</span>: {`,
         ...fields.map((f, i) => `      <span class="g-field">"${f}"</span>: ${val[f]}${i < fields.length - 1 ? "," : ""}`), "    }", "  }", "}"];
+      if (mini) {
+        // phones: a two-line version that rides under the center photo
+        const short = [`<span class="g-kw">query</span> { <span class="g-fn">photo</span>(id: <span class="g-str">"${d.id}"</span>) }`,
+          `<span class="g-arrow">→</span> <span class="g-str">"${esc(d.caption)}"</span>` + (d.place ? ` · <span class="g-str">${esc(d.place)}</span>` : "") + (d.year ? ` · <span class="g-num">${d.year}</span>` : "")];
+        miniQ.innerHTML = ""; miniR.innerHTML = ""; mini.classList.remove("is-done");
+        (async () => {
+          if (!reduce) await sleep(250);
+          if (run !== typeRun) return;
+          miniQ.innerHTML = short[0];
+          if (!reduce) await sleep(500);
+          if (run !== typeRun) return;
+          miniR.innerHTML = short[1]; mini.classList.add("is-done");
+        })();
+      }
       qEl.innerHTML = ""; rEl.innerHTML = "";
       const put = async (box, rows, gap) => { for (const row of rows) { if (run !== typeRun) return false; box.insertAdjacentHTML("beforeend", row + "\n"); if (!reduce) await sleep(gap); } return true; };
       if (!(await put(qEl, q, 55))) return;
