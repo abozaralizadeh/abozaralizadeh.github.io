@@ -27,11 +27,11 @@ After work I build [products](#products) on my own. My only team is a group of A
 5. **Build in public.** Public repos, a [live trading dashboard](#traide) and [write-ups on Medium](#writing). Anyone can watch the work as it happens.
 6. **Ship the story too.** Every product ships with a build diary, [demo films](#demo-recorder) and [social posts](#aism2), made mostly by my own agents and skills.
 
-| 800 | 943 | 6 | 20 |
+| 809 | 943 | 6 | 20 |
 |:-:|:-:|:-:|:-:|
 | contributions in the last 12 months | public commits | AI experiments running daily | articles written |
 
-Public GitHub contributions per year: **55** (2020), **53** (2021), **10** (2022), **59** (2023), **74** (2024), **203** (2025), **757** (2026, up to 14 October).
+Public GitHub contributions per year: **55** (2020), **53** (2021), **10** (2022), **59** (2023), **74** (2024), **203** (2025), **766** (2026, up to 14 October). On the site this chart updates itself every day.
 
 ---
 

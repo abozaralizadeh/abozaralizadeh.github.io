@@ -92,17 +92,17 @@
   $$(".reveal").forEach((el) => revealIO.observe(el));
 
   $$("[data-count]").forEach((el) => {
-    const target = Number(el.dataset.count);
     if (reduce) return;
     el.textContent = "0";
     onceVisible(el, async () => {
+      const target = Number(el.dataset.count);
       const t0 = performance.now();
       const dur = 1400;
       const step = (t) => {
         const k = clamp((t - t0) / dur);
         const eased = 1 - Math.pow(1 - k, 3);
         el.textContent = Math.round(target * eased).toLocaleString("en");
-        if (k < 1) requestAnimationFrame(step);
+        if (k < 1) requestAnimationFrame(step); else el.dataset.done = "1";
       };
       requestAnimationFrame(step);
     });
@@ -205,22 +205,53 @@
      ------------------------------------------------------------------ */
   const chart = $("#contrib");
   if (chart) {
-    const tip = $(".chart-tip", chart);
-    $$(".bar", chart).forEach((b, i) => {
+    const tip = $(".chart-tip", chart), bars = $(".bars", chart);
+    const maxOf = () => Number(getComputedStyle(bars).getPropertyValue("--max")) || 757;
+    const wire = () => $$(".bar", chart).forEach((b, i) => {
       b.style.setProperty("--i", i);
       const show = () => {
         const r = b.getBoundingClientRect();
         const c = chart.getBoundingClientRect();
         tip.textContent = `${b.dataset.year} · ${Number(b.dataset.val).toLocaleString("en")} contributions`;
         tip.style.left = `${r.left - c.left + r.width / 2}px`;
-        const barTop = r.bottom - c.top - (Number(b.dataset.val) / 757) * r.height;
+        const barTop = r.bottom - c.top - (Number(b.dataset.val) / maxOf()) * r.height;
         tip.style.top = `${barTop - 6}px`;
         tip.classList.add("show");
       };
       b.addEventListener("pointerenter", show);
       b.addEventListener("pointerleave", () => tip.classList.remove("show"));
     });
+    wire();
     onceVisible(chart, () => chart.classList.add("in"));
+
+    // live numbers: a daily GitHub Action writes data/contributions.json; the static bars stay as fallback
+    fetch(`data/contributions.json?d=${new Date().toISOString().slice(0, 10)}`, { cache: "no-cache" })
+      .then((r) => (r.ok ? r.json() : Promise.reject(r.status)))
+      .then((d) => {
+        if (!d || !Array.isArray(d.years) || !d.years.length) return;
+        const ys = d.years, n = ys.length, max = Math.max(1, ...ys.map((y) => y.count));
+        bars.style.setProperty("--max", max);
+        bars.style.gridTemplateColumns = `repeat(${n}, minmax(0, 1fr))`;
+        bars.innerHTML = ys.map((y, i) => {
+          const label = i >= n - 2, now = i === n - 1;
+          return `<div class="bar${label ? " is-labeled" : ""}${now ? " is-now" : ""}" style="--v:${y.count}" data-year="${y.year}" data-val="${y.count}"><i></i>${label ? `<b>${y.count.toLocaleString("en")}</b>` : ""}</div>`;
+        }).join("");
+        bars.setAttribute("aria-label", "Contributions per year: " + ys.map((y) => `${y.year} ${y.count}`).join(", ") + ".");
+        const axis = $(".bars-axis", chart);
+        axis.style.gridTemplateColumns = `repeat(${n}, minmax(0, 1fr))`;
+        axis.innerHTML = ys.map((y) => `<span>${y.year}</span>`).join("");
+        const tb = $("table tbody", chart);
+        if (tb) tb.innerHTML = ys.map((y) => `<tr><td>${y.year}</td><td>${y.count}</td></tr>`).join("");
+        const upd = new Date(`${d.updated}T12:00:00Z`);
+        const sub = $(".chart-sub", chart);
+        if (sub && !isNaN(upd)) sub.textContent = `${ys[n - 1].year} counted up to ${upd.toLocaleDateString("en-GB", { day: "numeric", month: "long" })}`;
+        wire();
+        if (d.lastYear) $$('[data-live="last-year"]').forEach((el) => {
+          el.dataset.count = d.lastYear;
+          if (el.dataset.done || reduce) el.textContent = d.lastYear.toLocaleString("en");
+        });
+      })
+      .catch(() => {});
   }
 
   /* ------------------------------------------------------------------

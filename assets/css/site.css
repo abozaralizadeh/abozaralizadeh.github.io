@@ -1067,3 +1067,7 @@ html { overflow-x: clip; }
   .gql-side { margin-top: 10px; }
 }
 @media (max-width: 820px) { .offline-stage .pgraph { height: 1100px; } }
+
+/* contributions chart: scale to the live maximum (set by JS from data/contributions.json) */
+.bar i { height: max(calc(var(--v) / var(--max, 757) * 100% * var(--grow, 0)), 0px); }
+.bar b { bottom: calc(var(--v) / var(--max, 757) * 100% * var(--grow, 0) + 6px); }
