@@ -27,7 +27,7 @@ After work I build [products](#products) on my own. My only team is a group of A
 5. **Build in public.** Public repos, a [live trading dashboard](#traide) and [write-ups on Medium](#writing). Anyone can watch the work as it happens.
 6. **Ship the story too.** Every product ships with a build diary, [demo films](#demo-recorder) and [social posts](#aism2), made mostly by my own agents and skills.
 
-| 809 | 943 | 6 | 20 |
+| 809 | 943 | 6 | 21 |
 |:-:|:-:|:-:|:-:|
 | contributions in the last 12 months | public commits | AI experiments running daily | articles written |
 
@@ -117,7 +117,7 @@ It runs in production every day and manages my own X, Instagram and YouTube. One
 
 A research agent scans about 700 futures contracts and the news. A trading agent decides. A supervisor talks to me on Telegram. And plain code, not the model, owns the stops.
 
-Since 30 September I've been running an experiment: **Jev vs Luna**. Jev, a second decision model, trades next to Luna, the original agent, on the same account and behind the same safety gates. Each is scored only on its own calls, and the public dashboard compares their decisions side by side.
+Since 30 September I've been running an experiment: **Jev vs Luna**. Jev, a second decision model, trades next to Luna, the original agent, on the same account and behind the same safety gates. Each is scored only on its own calls, and the public dashboard compares their decisions side by side. I wrote up [the first 17 days](https://pub.towardsai.net/17-days-with-jev-i-put-a-sub-second-system-one-ai-on-a-real-trading-account-c851c8eba1a1).
 
 > **Code enforces survival. The model owns opportunity.**
 
@@ -179,10 +179,11 @@ My personal open-source projects from before the agent era: chatbots, phone call
 <a id="writing"></a>
 ## Writing: I write about what I build
 
-20 articles on Medium, six of them published by Towards AI: generative AI in production, AI agents, and the [experiments](#sandbox) above.
+21 articles on Medium, seven of them published by Towards AI: generative AI in production, AI agents, and the [experiments](#sandbox) above.
 
 | Date | Article | Published in |
 |:-|:-|:-|
+| Oct 2026 | [17 Days with Jev: I Put a Sub-Second “System One” AI on a Real Trading Account](https://pub.towardsai.net/17-days-with-jev-i-put-a-sub-second-system-one-ai-on-a-real-trading-account-c851c8eba1a1) | Towards AI |
 | Oct 2026 | [I Put a Neural Network Inside a TypeScript File to Kill the Cron Expression](https://javascript.plainenglish.io/i-put-a-neural-network-inside-a-typescript-file-to-kill-the-cron-expression-1e09c6a44e88) | JavaScript in Plain English |
 | Sep 2026 | [I Gave my AI Agent $70 and My Exchange Keys. The Trading Was the Easy Part.](https://abozar-alizadeh.medium.com/i-gave-my-ai-agent-70-and-my-exchange-keys-the-trading-was-the-easy-part-d23cdda52457) | Medium |
 | Aug 2026 | [Round-Robin Broke My Agent](https://pub.towardsai.net/round-robin-broke-my-agent-dda6885c0a25) | Towards AI |
