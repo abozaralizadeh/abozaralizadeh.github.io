@@ -1,7 +1,7 @@
 # Abozar Alizadeh
 
 **Senior Software Engineer and Solution Architect in Milan.**
-GenAI in production by day. A crew of AI agents by night.
+GenAI in production by day. Hobby projects with AI agents after hours.
 
 🌐 **[abozaralizadeh.github.io](https://abozaralizadeh.github.io)** · [LinkedIn](https://www.linkedin.com/in/abozar-alizadeh) · [GitHub](https://github.com/abozaralizadeh) · [Twitter](https://x.com/abo0zar) · [Medium](https://abozar-alizadeh.medium.com) · [Reddit](https://www.reddit.com/user/ab0zar/) · [SandBox](https://sandboxes.live)
 
@@ -12,20 +12,20 @@ The story runs backwards: the newest work first, then how I got here.
 ---
 
 <a id="now"></a>
-## Now: one human and a crew of AI agents
+## Now: after hours, a crew of AI agents
 
-After work I build [products](#products) on my own. My only team is a group of AI agents that I direct from a single control chat. They research, build, review each other's work and write the docs. I decide what to build, test everything on my own phone and own every commit.
+After work I [build things](#ideas), just because I love it. New and creative ideas get me excited, and I can't wait to see them running. My only team is a group of AI agents that I direct from a single control chat. They research, build, review each other's work and write the docs. I decide what to build and test everything on my own phone.
 
 > Put the AI only where the uncertainty is. Everything else should be boring code you can test.
 
 **How I build**
 
-1. **Build, review, ship.** One agent builds a feature, another reviews it like a tough critic, a third polishes it. All before I install anything.
-2. **Measure everything.** Every feature ships with automated tests, and every claim is checked against real data before it goes out.
-3. **One session per project.** Every product keeps its own long-lived agent session with its whole history. One Mission Control chat steers them all.
-4. **Frugal by design.** No team to pay, no ad budget. Free cloud tiers, a Claude subscription and a lot of tests.
-5. **Build in public.** Public repos, a [live trading dashboard](#traide) and [write-ups on Medium](#writing). Anyone can watch the work as it happens.
-6. **Ship the story too.** Every product ships with a build diary, [demo films](#demo-recorder) and [social posts](#aism2), made mostly by my own agents and skills.
+1. **Build, review, polish.** One agent builds a feature, another reviews it like a tough critic, a third polishes it. All before I install anything.
+2. **Measure everything.** Every feature comes with automated tests, and every claim is checked against real data before I write about it.
+3. **One session per project.** Every project keeps its own long-lived agent session with its whole history. One Mission Control chat steers them all.
+4. **Small on purpose.** It's a hobby, so it stays cheap: free cloud tiers, a Claude subscription and a lot of tests.
+5. **Learn in public.** Public repos, a [live trading dashboard](#traide) and [write-ups on Medium](#writing). Anyone can watch the work as it happens.
+6. **Write it down too.** Every project gets a build diary, [demo films](#demo-recorder) and [social posts](#aism2), made mostly by my own agents and skills.
 
 | 809 | 943 | 6 | 21 |
 |:-:|:-:|:-:|:-:|
@@ -38,7 +38,7 @@ Public GitHub contributions per year: **55** (2020), **53** (2021), **10** (2022
 <a id="ideas"></a>
 ## November 2026 · Ideas I'd kept for years, now out in the open
 
-I keep a notes file of ideas. This month I picked eleven and gave each one its own agent session. Every one now has a working build, a real demo, its own website and a public repo. Same rules for every one: a real recording of the real app, a site with its own look that works on a phone, a README a stranger can follow, and one licence. The source is open to read and to use for free, but not to sell.
+I keep a notes file of ideas. This month I picked eleven, just for fun, and gave each one its own agent session. Every one now has a working build, a real demo, its own website and a public repo. Same rules for every one: a real recording of the real app, a site with its own look that works on a phone, a README a stranger can follow, and one licence. The source is open to read and to use for free, but not to sell.
 
 | | Project | What it does | Links |
 |:-:|---|---|---|
@@ -74,44 +74,22 @@ An idea I first wrote down in 2016. The technology finally caught up. → [paral
 
 ---
 
-<a id="products"></a>
-## September 2026 · Two products, one night
+<a id="builds"></a>
+## September 2026 · Two builds, one night
 
-One night in September I opened two agent sessions, sixty seconds apart: a booking platform for clinicians and a marketplace for group games. Three weeks later both were running, each with its own tests, legal research, films and build diary.
+One night in September I opened two agent sessions, sixty seconds apart, to see how far agents could take a bigger platform: online booking for clinicians and a way to fill group games. Both work end to end on sample data. Neither is open to real users.
 
-<a id="praxamo"></a>
-### Praxamo: your practice, online · [praxamo.it](https://praxamo.it)
-
-![Praxamo: The patients you bring stay yours](assets/img/praxamo/banner.webp)
-
-- **Their own site, their own name.** Every Italian clinician gets a professional website and online booking at *their-name*.praxamo.it. No marketplace in between: the patients you bring stay yours.
-- **A dentist, a GP, a cardiologist.** Eight templates and eleven colour schemes, all contrast tested.
-- **Regulation is the architecture.** Every page is checked against Italian health advertising law before it can go live.
-- **Book without an account.** Patients book as guests; confirmations and reminders arrive in the practice's own name and colour.
-- **A human looks first.** Nobody goes live until a human (me) has checked them against the official registers.
-- **Tested like it matters.** 1,504 automated tests and 77 tenant isolation checks. Even the marketing film is a test.
-
-[Watch the film (2:17)](assets/video/praxamo-film-en.mp4) · *The film uses an AI voice and sample data.*
-
-<a id="partyta"></a>
-### Partyta: any group game, one seat at a time · [partyta.com](https://www.partyta.com)
-
-![Partyta: You don't need ten friends to play](assets/img/partyta/paintball.webp)
-
-Paintball, laser tag, softair and VR need 10 to 24 players. Nobody sells those games seat by seat, so you end up chasing friends for days. On Partyta, venues publish open games and you join alone or with friends. Your card is only held, and it's charged only when the game reaches its minimum. If it never fills, nobody pays.
-
-**What's inside:** a player app and website from one codebase, a console for venues, a group chat for every game, an iPhone build and 231 automated tests, in Italian and English. *In demo, payments simulated.*
+<a id="praxamo"></a><a id="partyta"></a>
 
 | | |
 |:-:|:-:|
-| ![Partyta player feed](assets/img/partyta/player-feed.webp) | ![A Partyta game page](assets/img/partyta/player-slot.webp) |
-
-[Watch the promo (1:23)](assets/video/partyta-promo-en.mp4) · *Synthetic voice; photos are AI-generated.*
+| ![Praxamo poster](assets/img/praxamo/card.webp) | ![Partyta poster](assets/img/partyta/card.webp) |
+| **Praxamo** · web platform, healthcare booking. A website and online booking for each Italian clinician, with every page checked against Italian health advertising law before it can go live. A way to learn multi-tenant apps in a heavily regulated field. [Watch the demo (2:17)](assets/video/praxamo-film-en.mp4) · *Sample data, not open to users. AI-generated photo and voice.* | **Partyta** · web and iPhone, group games. Join a paintball or laser tag game one seat at a time. Your card is only held, and it's charged once the game fills. A way to try held payments and group chat in one app. [Watch the demo (1:23)](assets/video/partyta-promo-en.mp4) · *Test payments, not open to users. AI-generated photo and voice.* |
 
 <a id="demo-recorder"></a>
-### demo-recorder: a camera crew for product demos · open source, MIT
+### demo-recorder: a camera crew for demos · open source, MIT
 
-Ask Claude for a demo video and it scripts it, records it with a smooth, visible cursor and captions, checks the result and hands you an MP4. The [Praxamo](#praxamo) and [Partyta](#partyta) films above were made with it. It exports MP4, GIF or WebM in 16:9, square or vertical.
+Ask Claude for a demo video and it scripts it, records it with a smooth, visible cursor and captions, checks the result and hands you an MP4. The [Praxamo](#praxamo) and [Partyta](#partyta) demo films were made with it, and so was every demo in the [Ideas](#ideas) chapter. It exports MP4, GIF or WebM in 16:9, square or vertical.
 
 ```
 /plugin marketplace add abozaralizadeh/ClaudeScreenRecordingSkill
@@ -136,7 +114,7 @@ It runs in production every day and manages my own X, Instagram and YouTube. One
 ---
 
 <a id="traide"></a>
-## December 2025 · trAIde: AI trading agents, with real money on the line
+## December 2025 · trAIde: AI trading agents, tested on a small real account
 
 A research agent scans about 700 futures contracts and the news. A trading agent decides. A supervisor talks to me on Telegram. And plain code, not the model, owns the stops.
 
@@ -165,7 +143,7 @@ Since 30 September I've been running an experiment: **Jev vs Luna**. Jev, a seco
 ---
 
 <a id="sandbox"></a>
-## Since November 2024 · SandBox: AI experiments, shipped daily
+## Since November 2024 · SandBox: AI experiments, running daily
 
 [sandboxes.live](https://sandboxes.live) is a playground of autonomous agents that publish something new every day, all by themselves. Every experiment keeps its whole archive, and each page has a calendar to travel back in time.
 
@@ -275,8 +253,8 @@ Milan is home. Weekends are for bikes, mountains, trips and a good view.
 
 ## Say hello
 
-I'm always up for a chat about AI agents, architecture, or a side project that deserves to ship.
+Always happy to chat about AI agents and architecture.
 
 [LinkedIn](https://www.linkedin.com/in/abozar-alizadeh) · [GitHub](https://github.com/abozaralizadeh) · [Twitter @abo0zar](https://x.com/abo0zar) · [Medium](https://abozar-alizadeh.medium.com) · [Reddit u/ab0zar](https://www.reddit.com/user/ab0zar/) · [sandboxes.live](https://sandboxes.live)
 
-<sub>© 2026 Abozar Alizadeh · Built with my AI agents, one session at a time. Images marked AI-generated were made with AI. Product shots use sample data.</sub>
+<sub>© 2026 Abozar Alizadeh · Built with my AI agents, one session at a time. Images marked AI-generated were made with AI. Screenshots use sample data.</sub>

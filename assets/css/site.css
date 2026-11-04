@@ -1106,3 +1106,15 @@ html { overflow-x: clip; }
   .ideas .idea:last-child:nth-child(3n+1) { grid-column: 3 / span 2; }
   .ideas .idea:nth-last-child(2):nth-child(3n+1) { grid-column: 2 / span 2; }
 }
+
+/* ---------- 05 · two builds, shown as small cards in the Ideas style ---------- */
+.ideas .idea > p.fine { margin: auto 8px 0; padding-top: 16px; color: var(--ink-3, var(--ink-2)); font-size: 13px; }
+.ideas.builds .idea > p.fine { margin: 14px 8px 0; padding-top: 0; }
+/* full width: two big cards side by side from tablet up */
+@media (min-width: 821px) {
+  .ideas.builds { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px; }
+  .ideas.builds > .idea.idea:nth-child(n) { grid-column: auto; }
+  .builds .idea { padding: 14px 14px 24px; }
+  .builds .idea h3 { font-size: 40px; }
+  .builds .idea > p:not(.card-k):not(.links):not(.fine) { font-size: 16px; }
+}
