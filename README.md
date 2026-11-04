@@ -35,6 +35,29 @@ Public GitHub contributions per year: **55** (2020), **53** (2021), **10** (2022
 
 ---
 
+<a id="ideas"></a>
+## November 2026 · Ideas I'd kept for years, now out in the open
+
+I keep a notes file of ideas. This month I picked eleven and gave each one its own agent session. Every one now has a working build, a real demo, its own website and a public repo. Same rules for every one: a real recording of the real app, a site with its own look that works on a phone, a README a stranger can follow, and one licence. The source is open to read and to use for free, but not to sell.
+
+| | Project | What it does | Links |
+|:-:|---|---|---|
+| ![Demos](assets/img/ideas/demos.webp) | **Demos** · voice app, iPhone and Android | Talk to everyone in your city at once. The World answers as "we", built only from what real people said. | [Site](https://abozaralizadeh.github.io/Demos/) · [Code](https://github.com/abozaralizadeh/Demos) |
+| ![CheapCart](assets/img/ideas/cheapcart.webp) | **CheapCart** · web app, groceries | Type your shopping list and see which shop nearby sells each item for less, and whether the extra stop is worth it. | [Site](https://abozaralizadeh.github.io/CheapCart/) · [Code](https://github.com/abozaralizadeh/CheapCart) |
+| ![CueSight](assets/img/ideas/cuesight.webp) | **CueSight** · iPhone, augmented reality | Point your phone at a pool or snooker table and see where the balls will go before you take the shot. | [Site](https://abozaralizadeh.github.io/CueSight/) · [Code](https://github.com/abozaralizadeh/CueSight) |
+| ![ScrollTax](assets/img/ideas/scrolltax.webp) | **ScrollTax** · iPhone, screen time | Your social apps stay blocked. When you really want in, you pay a small toll for 15 minutes, then the block comes back. | [Site](https://abozaralizadeh.github.io/ScrollTax/) · [Code](https://github.com/abozaralizadeh/ScrollTax) |
+| ![OpenMutual](assets/img/ideas/openmutual.webp) | **OpenMutual** · simulation, test money only | A community risk pool where public data decides every payout. Your flight lands four hours late and it pays out by itself. | [Site](https://abozaralizadeh.github.io/OpenMutual/) · [Code](https://github.com/abozaralizadeh/OpenMutual) |
+| ![Runvale](assets/img/ideas/runvale.webp) | **Runvale** · CLI and web, deployment | Built an app with AI? It finds the leaks, picks the cheapest cloud that fits, writes a hardened server kit and keeps watching it. | [Site](https://abozaralizadeh.github.io/Runvale/) · [Code](https://github.com/abozaralizadeh/Runvale) |
+| ![LivingCode](assets/img/ideas/livingcode.webp) | **LivingCode** · library, self-healing apps | It reads the errors in your logs and writes a fix. A guard with no AI in it deploys the fix and rolls back if anything breaks. | [Site](https://abozaralizadeh.github.io/LivingCode/) · [Code](https://github.com/abozaralizadeh/LivingCode) |
+| ![Tactful](assets/img/ideas/tactful.webp) | **Tactful** · web chat, two people | A chat for two people with a problem to solve. Write it the way it feels, and it reaches the other person calmer, after you approve it. | [Site](https://abozaralizadeh.github.io/Tactful/) · [Code](https://github.com/abozaralizadeh/Tactful) |
+| ![CheatWall](assets/img/ideas/cheatwall.webp) | **CheatWall** · web app, study posters | Type what you're studying and get a big, print-ready A2 cheat sheet poster for your wall. | [Site](https://abozaralizadeh.github.io/CheatWall/) · [Code](https://github.com/abozaralizadeh/CheatWall) |
+| ![Hamdast](assets/img/ideas/hamdast.webp) | **Hamdast** · party game, Farsi and English | Play Mafia online with friends. The app deals the roles in secret, keeps time and counts the votes, so nobody has to sit out and moderate. | [Site](https://abozaralizadeh.github.io/Hamdast/) · [Code](https://github.com/abozaralizadeh/Hamdast) |
+| ![Felinquent](assets/img/ideas/felinquent.webp) | **Felinquent** · Mac app, desktop pet | A cat that lives on your Mac. It naps on your windows, sits on whatever you're reading and ignores you when you call. | [Site](https://abozaralizadeh.github.io/Felinquent/) · [Code](https://github.com/abozaralizadeh/Felinquent) |
+
+Early builds. The demos run on sample data or test money. The pictures are each project's own social card.
+
+---
+
 ## October 2026 · Coming soon
 
 **Something I can't show you yet.** *There is more here than you can see.*

@@ -37,7 +37,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/css/site.css?v=79">
+<link rel="stylesheet" href="assets/css/site.css?v=82">
 
 <script type="application/ld+json">
 {
@@ -72,7 +72,7 @@
 <header class="topbar">
   <a class="brand" href="#top" aria-label="Back to top"><img class="brand-avatar" src="assets/img/me/brand.webp?v=2" alt="" width="34" height="34"><span class="brand-name">Abozar Alizadeh</span></a>
   <nav class="topnav" aria-label="Main">
-    <a href="#next">Work</a>
+    <a href="#ideas">Work</a>
     <a href="#writing">Writing</a>
     <a href="#by-day">About</a>
     <a href="#contact" class="topnav-cta">Say hello</a>
@@ -83,19 +83,20 @@
   <ol>
     <li><a href="#top" data-rail="00"><span>00</span><em>Hello</em></a></li>
     <li><a href="#now" data-rail="01"><span>01</span><em>Now</em></a></li>
-    <li><a href="#next" data-rail="02"><span>02</span><em>Next</em></a></li>
-    <li><a href="#cronai" data-rail="03"><span>03</span><em>CronAI</em></a></li>
-    <li><a href="#products" data-rail="04"><span>04</span><em>Praxamo &amp; Partyta</em></a></li>
-    <li><a href="#aism2" data-rail="05"><span>05</span><em>AISM²</em></a></li>
-    <li><a href="#traide" data-rail="06"><span>06</span><em>trAIde</em></a></li>
-    <li><a href="#tools" data-rail="07"><span>07</span><em>Tools</em></a></li>
-    <li><a href="#sandbox" data-rail="08"><span>08</span><em>SandBox</em></a></li>
-    <li><a href="#early" data-rail="09"><span>09</span><em>Early open source</em></a></li>
-    <li><a href="#writing" data-rail="10"><span>10</span><em>Writing</em></a></li>
-    <li><a href="#by-day" data-rail="11"><span>11</span><em>By day</em></a></li>
-    <li><a href="#origins" data-rail="12"><span>12</span><em>Origins</em></a></li>
-    <li><a href="#offline" data-rail="13"><span>13</span><em>Offline</em></a></li>
-    <li><a href="#contact" data-rail="14"><span>14</span><em>Hello</em></a></li>
+    <li><a href="#ideas" data-rail="02"><span>02</span><em>Ideas</em></a></li>
+    <li><a href="#next" data-rail="03"><span>03</span><em>Next</em></a></li>
+    <li><a href="#cronai" data-rail="04"><span>04</span><em>CronAI</em></a></li>
+    <li><a href="#products" data-rail="05"><span>05</span><em>Praxamo &amp; Partyta</em></a></li>
+    <li><a href="#aism2" data-rail="06"><span>06</span><em>AISM²</em></a></li>
+    <li><a href="#traide" data-rail="07"><span>07</span><em>trAIde</em></a></li>
+    <li><a href="#tools" data-rail="08"><span>08</span><em>Tools</em></a></li>
+    <li><a href="#sandbox" data-rail="09"><span>09</span><em>SandBox</em></a></li>
+    <li><a href="#early" data-rail="10"><span>10</span><em>Early open source</em></a></li>
+    <li><a href="#writing" data-rail="11"><span>11</span><em>Writing</em></a></li>
+    <li><a href="#by-day" data-rail="12"><span>12</span><em>By day</em></a></li>
+    <li><a href="#origins" data-rail="13"><span>13</span><em>Origins</em></a></li>
+    <li><a href="#offline" data-rail="14"><span>14</span><em>Offline</em></a></li>
+    <li><a href="#contact" data-rail="15"><span>15</span><em>Hello</em></a></li>
   </ol>
 </nav>
 
@@ -190,11 +191,113 @@
   </div>
 </section>
 
-<!-- ============ 02 · NEXT ============ -->
-<section class="chapter next is-collapsed" id="next" data-chapter="02" data-path="~/2026-10/next">
+<!-- ============ 02 · IDEAS ============ -->
+<section class="chapter" id="ideas" data-chapter="02" data-path="~/2026-11/ideas">
+  <div class="wrap">
+    <div class="chapter-head">
+      <p class="eyebrow">02 / November 2026 · Out of the notes file</p>
+      <h2 class="display">Ideas I'd kept for years, <em>now out in the open.</em></h2>
+      <p class="lead narrow">I keep a notes file of ideas. This month I picked eleven and gave each one its own agent session. Every one now has a working build, a real demo, its own website and a public repo.</p>
+    </div>
+
+    <div class="ideas-intro">
+      <pre class="term-box reveal" aria-label="A terminal listing eleven public repositories"><code><span class="term-ps">$</span> <span data-type="gh repo list --visibility public">gh repo list --visibility public</span>
+<span class="c-c">Demos  CheapCart  CueSight  ScrollTax</span>
+<span class="c-c">OpenMutual  Runvale  LivingCode</span>
+<span class="c-c">Tactful  CheatWall  Hamdast  Felinquent</span>
+<span class="term-ps">$</span> <span data-type="cat LICENSE | head -1">cat LICENSE | head -1</span>
+<span class="c-c">free for non-commercial use</span></code></pre>
+      <aside class="note note-promo reveal"><p class="note-k">// same rules for every one</p><p>A real recording of the real app, never a mock-up. A site with its own look that works on a phone. A README a stranger can follow. And one licence: the source is open to read and to use for free, but not to sell.</p></aside>
+    </div>
+
+    <div class="ideas">
+      <article class="idea reveal" style="--c:#5fd08a">
+        <a class="idea-shot" href="https://abozaralizadeh.github.io/Demos/" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true"><img src="assets/img/ideas/demos.webp" alt="" width="960" height="504" loading="lazy"></a>
+        <p class="card-k">// voice app · iPhone and Android</p>
+        <h3>Demos</h3>
+        <p>Talk to everyone in your city at once. The World answers as "we", built only from what real people said.</p>
+        <p class="links"><a href="https://abozaralizadeh.github.io/Demos/" target="_blank" rel="noopener">Site</a><a href="https://github.com/abozaralizadeh/Demos" target="_blank" rel="noopener">Code</a></p>
+      </article>
+      <article class="idea reveal" style="--c:#ef5b3f">
+        <a class="idea-shot" href="https://abozaralizadeh.github.io/CheapCart/" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true"><img src="assets/img/ideas/cheapcart.webp" alt="" width="960" height="504" loading="lazy"></a>
+        <p class="card-k">// web app · groceries</p>
+        <h3>CheapCart</h3>
+        <p>Type your shopping list and see which shop nearby sells each item for less, and whether the extra stop is worth it.</p>
+        <p class="links"><a href="https://abozaralizadeh.github.io/CheapCart/" target="_blank" rel="noopener">Site</a><a href="https://github.com/abozaralizadeh/CheapCart" target="_blank" rel="noopener">Code</a></p>
+      </article>
+      <article class="idea reveal" style="--c:#f2c94c">
+        <a class="idea-shot" href="https://abozaralizadeh.github.io/CueSight/" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true"><img src="assets/img/ideas/cuesight.webp" alt="" width="960" height="504" loading="lazy"></a>
+        <p class="card-k">// iPhone · augmented reality</p>
+        <h3>CueSight</h3>
+        <p>Point your phone at a pool or snooker table and see where the balls will go before you take the shot.</p>
+        <p class="links"><a href="https://abozaralizadeh.github.io/CueSight/" target="_blank" rel="noopener">Site</a><a href="https://github.com/abozaralizadeh/CueSight" target="_blank" rel="noopener">Code</a></p>
+      </article>
+      <article class="idea reveal" style="--c:#f5c33b">
+        <a class="idea-shot" href="https://abozaralizadeh.github.io/ScrollTax/" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true"><img src="assets/img/ideas/scrolltax.webp" alt="" width="960" height="504" loading="lazy"></a>
+        <p class="card-k">// iPhone · screen time</p>
+        <h3>ScrollTax</h3>
+        <p>Your social apps stay blocked. When you really want in, you pay a small toll for 15 minutes, then the block comes back.</p>
+        <p class="links"><a href="https://abozaralizadeh.github.io/ScrollTax/" target="_blank" rel="noopener">Site</a><a href="https://github.com/abozaralizadeh/ScrollTax" target="_blank" rel="noopener">Code</a></p>
+      </article>
+      <article class="idea reveal" style="--c:#f2b233">
+        <a class="idea-shot" href="https://abozaralizadeh.github.io/OpenMutual/" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true"><img src="assets/img/ideas/openmutual.webp" alt="" width="960" height="504" loading="lazy"></a>
+        <p class="card-k">// simulation · test money only</p>
+        <h3>OpenMutual</h3>
+        <p>A community risk pool where public data decides every payout. Your flight lands four hours late and it pays out by itself.</p>
+        <p class="links"><a href="https://abozaralizadeh.github.io/OpenMutual/" target="_blank" rel="noopener">Site</a><a href="https://github.com/abozaralizadeh/OpenMutual" target="_blank" rel="noopener">Code</a></p>
+      </article>
+      <article class="idea reveal" style="--c:#ff5a2c">
+        <a class="idea-shot" href="https://abozaralizadeh.github.io/Runvale/" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true"><img src="assets/img/ideas/runvale.webp" alt="" width="960" height="504" loading="lazy"></a>
+        <p class="card-k">// CLI and web · deployment</p>
+        <h3>Runvale</h3>
+        <p>Built an app with AI? It finds the leaks, picks the cheapest cloud that fits, writes a hardened server kit and keeps watching it.</p>
+        <p class="links"><a href="https://abozaralizadeh.github.io/Runvale/" target="_blank" rel="noopener">Site</a><a href="https://github.com/abozaralizadeh/Runvale" target="_blank" rel="noopener">Code</a></p>
+      </article>
+      <article class="idea reveal" style="--c:#36d07a">
+        <a class="idea-shot" href="https://abozaralizadeh.github.io/LivingCode/" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true"><img src="assets/img/ideas/livingcode.webp" alt="" width="960" height="504" loading="lazy"></a>
+        <p class="card-k">// library · self-healing apps</p>
+        <h3>LivingCode</h3>
+        <p>It reads the errors in your logs and writes a fix. A guard with no AI in it deploys the fix and rolls back if anything breaks.</p>
+        <p class="links"><a href="https://abozaralizadeh.github.io/LivingCode/" target="_blank" rel="noopener">Site</a><a href="https://github.com/abozaralizadeh/LivingCode" target="_blank" rel="noopener">Code</a></p>
+      </article>
+      <article class="idea reveal" style="--c:#5ccfb0">
+        <a class="idea-shot" href="https://abozaralizadeh.github.io/Tactful/" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true"><img src="assets/img/ideas/tactful.webp" alt="" width="960" height="504" loading="lazy"></a>
+        <p class="card-k">// web chat · two people</p>
+        <h3>Tactful</h3>
+        <p>A chat for two people with a problem to solve. Write it the way it feels, and it reaches the other person calmer, after you approve it.</p>
+        <p class="links"><a href="https://abozaralizadeh.github.io/Tactful/" target="_blank" rel="noopener">Site</a><a href="https://github.com/abozaralizadeh/Tactful" target="_blank" rel="noopener">Code</a></p>
+      </article>
+      <article class="idea reveal" style="--c:#e2483b">
+        <a class="idea-shot" href="https://abozaralizadeh.github.io/CheatWall/" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true"><img src="assets/img/ideas/cheatwall.webp" alt="" width="960" height="504" loading="lazy"></a>
+        <p class="card-k">// web app · study posters</p>
+        <h3>CheatWall</h3>
+        <p>Type what you're studying and get a big, print-ready A2 cheat sheet poster for your wall.</p>
+        <p class="links"><a href="https://abozaralizadeh.github.io/CheatWall/" target="_blank" rel="noopener">Site</a><a href="https://github.com/abozaralizadeh/CheatWall" target="_blank" rel="noopener">Code</a></p>
+      </article>
+      <article class="idea reveal" style="--c:#f4b740">
+        <a class="idea-shot" href="https://abozaralizadeh.github.io/Hamdast/" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true"><img src="assets/img/ideas/hamdast.webp" alt="" width="960" height="504" loading="lazy"></a>
+        <p class="card-k">// party game · Farsi and English</p>
+        <h3>Hamdast</h3>
+        <p>Play Mafia online with friends. The app deals the roles in secret, keeps time and counts the votes, so nobody has to sit out and moderate.</p>
+        <p class="links"><a href="https://abozaralizadeh.github.io/Hamdast/" target="_blank" rel="noopener">Site</a><a href="https://github.com/abozaralizadeh/Hamdast" target="_blank" rel="noopener">Code</a></p>
+      </article>
+      <article class="idea reveal" style="--c:#f08a4b">
+        <a class="idea-shot" href="https://abozaralizadeh.github.io/Felinquent/" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true"><img src="assets/img/ideas/felinquent.webp" alt="" width="960" height="504" loading="lazy"></a>
+        <p class="card-k">// Mac app · desktop pet</p>
+        <h3>Felinquent</h3>
+        <p>A cat that lives on your Mac. It naps on your windows, sits on whatever you're reading and ignores you when you call.</p>
+        <p class="links"><a href="https://abozaralizadeh.github.io/Felinquent/" target="_blank" rel="noopener">Site</a><a href="https://github.com/abozaralizadeh/Felinquent" target="_blank" rel="noopener">Code</a></p>
+      </article>
+    </div>
+    <p class="fine ideas-fine reveal">Early builds. The demos run on sample data or test money. The pictures are each project's own social card.</p>
+  </div>
+</section>
+
+<!-- ============ 03 · NEXT ============ -->
+<section class="chapter next is-collapsed" id="next" data-chapter="03" data-path="~/2026-10/next">
   <div class="wrap next-bar">
     <div>
-      <p class="eyebrow">02 / October 2026 · Coming soon</p>
+      <p class="eyebrow">03 / October 2026 · Coming soon</p>
       <h2 class="next-title">Something I can't <em>show you yet.</em></h2>
     </div>
     <button class="next-toggle" type="button" aria-expanded="false" aria-controls="next-body">Expand <span aria-hidden="true">+</span></button>
@@ -210,11 +313,11 @@
   </div>
 </section>
 
-<!-- ============ 03 · CRONAI ============ -->
-<section class="chapter" id="cronai" data-chapter="03" data-path="~/2026-10/cronai">
+<!-- ============ 04 · CRONAI ============ -->
+<section class="chapter" id="cronai" data-chapter="04" data-path="~/2026-10/cronai">
   <div class="wrap">
     <div class="chapter-head">
-      <p class="eyebrow">03 / October 2026 · CronAI</p>
+      <p class="eyebrow">04 / October 2026 · CronAI</p>
       <h2 class="display">Say it, <em>don't cron it.</em></h2>
     </div>
     <div class="cronai split">
@@ -235,10 +338,10 @@
   </div>
 </section>
 
-<!-- ============ 04 · PRAXAMO AND PARTYTA ============ -->
-<section class="chapter" id="products" data-chapter="04" data-path="~/2026-09/products">
+<!-- ============ 05 · PRAXAMO AND PARTYTA ============ -->
+<section class="chapter" id="products" data-chapter="05" data-path="~/2026-09/products">
   <div class="wrap chapter-head">
-    <p class="eyebrow">04 / September 2026 · Two products, one night</p>
+    <p class="eyebrow">05 / September 2026 · Two products, one night</p>
     <h2 class="display">One night in September, I started <em>two products a minute apart.</em></h2>
     <p class="lead narrow">Two agent sessions, opened sixty seconds apart: a booking platform for clinicians and a marketplace for group games. Three weeks later both were running, each with its own tests, legal research, films and build diary.</p>
   </div>
@@ -339,10 +442,10 @@
   </div>
 </section>
 
-<!-- ============ 05 · AISM2 ============ -->
-<section class="chapter" id="aism2" data-chapter="05" data-path="~/2026-07/aism2">
+<!-- ============ 06 · AISM2 ============ -->
+<section class="chapter" id="aism2" data-chapter="06" data-path="~/2026-07/aism2">
   <div class="wrap chapter-head chapter-head-tight">
-    <p class="eyebrow">05 / July 2026 · AISM²</p>
+    <p class="eyebrow">06 / July 2026 · AISM²</p>
   </div>
   <div class="wrap">
     <div class="split split-top">
@@ -371,10 +474,10 @@
 
 </section>
 
-<!-- ============ 06 · TRAIDE ============ -->
-<section class="chapter" id="traide" data-chapter="06" data-path="~/2025-12/traide">
+<!-- ============ 07 · TRAIDE ============ -->
+<section class="chapter" id="traide" data-chapter="07" data-path="~/2025-12/traide">
   <div class="wrap chapter-head chapter-head-tight">
-    <p class="eyebrow">06 / December 2025 · trAIde</p>
+    <p class="eyebrow">07 / December 2025 · trAIde</p>
   </div>
   <div class="wrap">
     <div class="split">
@@ -412,11 +515,11 @@
   </div>
 </section>
 
-<!-- ============ 07 · TOOLS ============ -->
-<section class="chapter" id="tools" data-chapter="07" data-path="~/2025/tools">
+<!-- ============ 08 · TOOLS ============ -->
+<section class="chapter" id="tools" data-chapter="08" data-path="~/2025/tools">
   <div class="wrap">
     <div class="chapter-head">
-      <p class="eyebrow">07 / 2025 · Small, sharp tools</p>
+      <p class="eyebrow">08 / 2025 · Small, sharp tools</p>
       <h2 class="display">Small, sharp tools <em>I give away.</em></h2>
     </div>
     <div class="tools">
@@ -459,8 +562,8 @@
   </div>
 </section>
 
-<!-- ============ 08 · SANDBOX ============ -->
-<section class="chapter chapter-bleed" id="sandbox" data-chapter="08" data-path="~/2024/sandbox">
+<!-- ============ 09 · SANDBOX ============ -->
+<section class="chapter chapter-bleed" id="sandbox" data-chapter="09" data-path="~/2024/sandbox">
   <div class="sandbox-open" data-scene="mosaic">
     <div class="mosaic-stage">
       <div class="mosaic" aria-hidden="true">
@@ -486,7 +589,7 @@
         </div>
       </div>
       <div class="mosaic-copy wrap">
-        <p class="eyebrow">08 / Since November 2024 · SandBox</p>
+        <p class="eyebrow">09 / Since November 2024 · SandBox</p>
         <h2 class="display">AI experiments, <em>shipped daily.</em></h2>
         <p class="lead">sandboxes.live is a playground of autonomous agents that publish something new every day, all by themselves: a comic that draws itself, tomorrow's newspaper, a blog that researches AI, and a mathematician that never gives up.</p>
       </div>
@@ -667,11 +770,11 @@
   </div>
 </section>
 
-<!-- ============ 09 · EARLY OPEN SOURCE ============ -->
-<section class="chapter" id="early" data-chapter="09" data-path="~/2020-2023/open-source">
+<!-- ============ 10 · EARLY OPEN SOURCE ============ -->
+<section class="chapter" id="early" data-chapter="10" data-path="~/2020-2023/open-source">
   <div class="wrap">
     <div class="chapter-head">
-      <p class="eyebrow">09 / 2020 to 2023 · Early open source</p>
+      <p class="eyebrow">10 / 2020 to 2023 · Early open source</p>
       <h2 class="display">Before agents, <em>there was plumbing.</em></h2>
       <p class="lead narrow">My personal open-source projects from before the agent era: chatbots, phone calls and monitoring, built on my own time and shared with everyone.</p>
     </div>
@@ -711,11 +814,11 @@
   </div>
 </section>
 
-<!-- ============ 10 · WRITING ============ -->
-<section class="chapter" id="writing" data-chapter="10" data-path="~/writing">
+<!-- ============ 11 · WRITING ============ -->
+<section class="chapter" id="writing" data-chapter="11" data-path="~/writing">
   <div class="wrap">
     <div class="chapter-head">
-      <p class="eyebrow">10 / Writing</p>
+      <p class="eyebrow">11 / Writing</p>
       <h2 class="display">I write about <em>what I build.</em></h2>
       <p class="lead narrow">21 articles on Medium, seven of them published by Towards AI: generative AI in production, AI agents, and the <a class="xref" href="#sandbox">experiments</a> you just scrolled through.</p>
     </div>
@@ -751,11 +854,11 @@
   </div>
 </section>
 
-<!-- ============ 11 · BY DAY ============ -->
-<section class="chapter" id="by-day" data-chapter="11" data-path="~/about/by-day">
+<!-- ============ 12 · BY DAY ============ -->
+<section class="chapter" id="by-day" data-chapter="12" data-path="~/about/by-day">
   <div class="wrap">
     <div class="chapter-head">
-      <p class="eyebrow">11 / About me · 2020 to now</p>
+      <p class="eyebrow">12 / About me · 2020 to now</p>
       <h2 class="display">By day, I put generative AI <em>into production.</em></h2>
     </div>
 
@@ -808,10 +911,10 @@
   </div>
 </section>
 
-<!-- ============ 12 · ORIGINS ============ -->
-<section class="chapter" id="origins" data-chapter="12" data-path="~/about/origins">
+<!-- ============ 13 · ORIGINS ============ -->
+<section class="chapter" id="origins" data-chapter="13" data-path="~/about/origins">
   <div class="wrap chapter-head">
-    <p class="eyebrow">12 / About me · rewind to 2006</p>
+    <p class="eyebrow">13 / About me · rewind to 2006</p>
     <h2 class="display">Before Milan: three cities, three languages, <em>one habit of making things.</em></h2>
   </div>
 
@@ -959,11 +1062,11 @@
   </div>
 </section>
 
-<!-- ============ 13 · OFFLINE ============ -->
-<section class="chapter" id="offline" data-chapter="13" data-path="~/about/offline">
+<!-- ============ 14 · OFFLINE ============ -->
+<section class="chapter" id="offline" data-chapter="14" data-path="~/about/offline">
   <div class="wrap">
     <div class="chapter-head">
-      <p class="eyebrow">13 / About me · offline</p>
+      <p class="eyebrow">14 / About me · offline</p>
       <h2 class="display">Away from <em>the screen.</em></h2>
       <p class="lead narrow">Milan is home. Weekends are for bikes, mountains, trips and a good view.</p>
     </div>
@@ -1091,10 +1194,10 @@
   </div>
 </section>
 
-<!-- ============ 14 · CONTACT ============ -->
-<section class="chapter contact" id="contact" data-chapter="14" data-path="~/say-hello">
+<!-- ============ 15 · CONTACT ============ -->
+<section class="chapter contact" id="contact" data-chapter="15" data-path="~/say-hello">
   <div class="wrap">
-    <p class="eyebrow">14 / Say hello</p>
+    <p class="eyebrow">15 / Say hello</p>
     <h2 class="display display-xl">Let's build <em>something.</em></h2>
     <p class="lead narrow">I'm always up for a chat about AI agents, architecture, or a side project that deserves to ship.</p>
     <ul class="socials">
